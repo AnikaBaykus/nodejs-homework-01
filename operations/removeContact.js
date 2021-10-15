@@ -4,9 +4,13 @@ const removeContact = async (contactId) => {
     const data = await fs.readFile(contactsPath, "utf-8");
     const parseData = JSON.parse(data);
 
-    const newDate = parseData.filter((contact) => contact.id !== contactId);
+    const newDate = parseData.filter(
+      (contact) => contact.id !== Number(contactId)
+    );
+
     await fs.writeFile(contactsPath, JSON.stringify(newDate), "utf8");
-    return parseData;
+
+    return console.table(newDate);
   } catch (error) {
     console.error("Такой контакт не найден");
   }

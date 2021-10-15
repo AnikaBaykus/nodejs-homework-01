@@ -43,7 +43,7 @@ const invokeAction = ({ action, id, name, email, phone }) => {
       break;
 
     case "remove":
-      removeContact();
+      removeContact(id);
       break;
 
     default:
