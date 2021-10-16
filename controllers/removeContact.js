@@ -9,8 +9,8 @@ const removeContact = async (contactId) => {
     );
 
     await fs.writeFile(contactsPath, JSON.stringify(newDate), "utf8");
-
-    return console.table(newDate);
+    console.table(newDate)
+    return newDate;
   } catch (error) {
     console.error("Такой контакт не найден");
   }

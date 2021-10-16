@@ -15,7 +15,7 @@ const {
   getContactById,
   addContact,
   removeContact,
-} = require("./operations");
+} = require("./controllers");
 
 program
   .option("-a, --action <type>", "choose action")
@@ -51,4 +51,6 @@ const invokeAction = ({ action, id, name, email, phone }) => {
   }
 };
 
-invokeAction(argv);
+(async()=>{
+  await invokeAction(argv)
+  })()

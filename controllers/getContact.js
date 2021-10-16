@@ -8,7 +8,8 @@ const getContactById = async (contactId) => {
     const contactById = await parseData.find(
       (contact) => contact.id === Number(contactId)
     );
-    return console.table(contactById);
+    console.table(contactById)
+    return contactById ;
   } catch (error) {
     console.error("Контакт не найден");
   }

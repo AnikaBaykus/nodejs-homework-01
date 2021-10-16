@@ -16,8 +16,8 @@ const addContact = async (name, email, phone) => {
     parseData.push(newContact);
 
     await fs.writeFile(contactsPath, JSON.stringify(parseData), "utf8");
-
-    return console.table(parseData);
+    console.table(parseData)
+    return parseData;
   } catch (error) {
     console.error("Не удалось добавить новый контакт");
   }
